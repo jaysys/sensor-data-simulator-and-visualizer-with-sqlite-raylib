@@ -3,9 +3,10 @@
 A real-time sensor data visualization tool that reads from an SQLite database and displays the data using raylib.
 SQLite 데이터베이스에서 실시간 센서 데이터를 읽어 raylib을 사용하여 시각화하는 도구입니다.
 
-./sensor_simulater 실행시키면 온도,습도,조도 랜덤값을 생성하여 sqlite db에 10초 간격으로 계속생성해주는 역할만 수행합니다.
-
-./sensor_visualizer 실행시키면 시뮬레이터가 계속 생성하는 값을 주기적으로 읽어와서 모니터링 GUI 화면에 갱신 출력하는 역할을 수행합니다.
+```
+sensor_simulater 실행시키면 온도,습도,조도 랜덤값을 생성하여 sqlite db에 10초 간격으로 계속생성해주는 역할만 수행합니다.
+sensor_visualizer 실행시키면 시뮬레이터가 계속 생성하는 값을 주기적으로 읽어와서 모니터링 GUI 화면에 갱신 출력하는 역할을 수행합니다.
+```
 
 ## Features / 기능
 
