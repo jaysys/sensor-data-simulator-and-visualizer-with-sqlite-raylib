@@ -1,14 +1,18 @@
-# Compiled files
+# Compiled binaries
 sensor_visualizer
 sensor_simulator
+sensor_gsl_visualizer
 *.o
 *.out
 
 # Database files
+sensor_data.db
 *.db
 *.db-shm
 *.db-wal
 *.db-journal
+*.sqlite
+*.sqlite3
 
 # macOS system files
 .DS_Store
@@ -22,8 +26,10 @@ sensor_simulator
 *.swo
 *~
 
-# Build directory
+# Build directories
 build/
+bin/
+obj/
 
 # Log files
 *.log
