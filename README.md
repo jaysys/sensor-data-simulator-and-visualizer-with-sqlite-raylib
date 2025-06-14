@@ -6,10 +6,12 @@ SQLite 데이터베이스에서 실시간 센서 데이터를 읽어 raylib을 �
 ```
 sensor_simulater 실행시키면 온도,습도,조도 랜덤값을 생성하여 sqlite db에 10초 간격으로 계속생성해주는 역할만 수행합니다.
 sensor_visualizer 실행시키면 시뮬레이터가 계속 생성하는 값을 주기적으로 읽어와서 모니터링 GUI 화면에 갱신 출력하는 역할을 수행합니다.
+sensor_gsl_visualizer는 GSL(GNU Scientific Library)을 사용하여 고급 데이터 분석 및 시각화를 제공합니다.
 ```
 
 ## Features / 기능
 
+### Basic Visualizer
 - Real-time sensor data visualization
   - 실시간 센서 데이터 시각화
 - Supports temperature, humidity, and illuminance data
@@ -21,14 +23,33 @@ sensor_visualizer 실행시키면 시뮬레이터가 계속 생성하는 값을 
 - Timezone-aware timestamp display (KST)
   - 한국 표준시(KST)로 시간 표시
 
+### GSL Visualizer (Advanced)
+- Advanced statistical analysis using GSL (GNU Scientific Library)
+  - GSL을 사용한 고급 통계 분석
+- Moving average calculation
+  - 이동 평균 계산
+- Statistical metrics display (mean, median, standard deviation, min/max)
+  - 통계 지표 표시 (평균, 중앙값, 표준편차, 최소/최대값)
+- Polynomial trend line visualization
+  - 다항식 추세선 시각화
+- Real-time data processing and visualization
+  - 실시간 데이터 처리 및 시각화
+
 ## Prerequisites / 필수 사항
 
+### Common Dependencies / 공통 의존성
 - C compiler (GCC, Clang, etc.)
   - C 컴파일러 (GCC, Clang 등)
 - raylib library
   - raylib 라이브러리
 - SQLite3 development files
   - SQLite3 개발 파일
+
+### GSL Visualizer 추가 의존성
+- GSL (GNU Scientific Library)
+  - On macOS: `brew install gsl`
+  - On Ubuntu/Debian: `sudo apt-get install libgsl-dev`
+  - On other platforms: [GSL Installation Guide](https://www.gnu.org/software/gsl/doc/html/)
 
 ## Installation / 설치
 
@@ -72,6 +93,12 @@ make visual
 
 ```bash
 make sim
+```
+
+### Build only the GSL visualizer / GSL 시각화 도구만 빌드
+
+```bash
+make gsl_visual
 ```
 
 ### Clean build files / 빌드 파일 정리
@@ -118,15 +145,36 @@ Open two terminal windows:
 ./sensor_simulator
 ```
 
-**Terminal 2 / 터미널 2**:
+**Terminal 2 / 터미널 2 (기본 시각화 도구)**:
 
 ```bash
 ./sensor_visualizer
 ```
 
+또는 GSL 시각화 도구 사용 시:
+
+```bash
+./sensor_gsl_visualizer
+```
+
+### 4. Using Makefile for convenience / 편의를 위한 Makefile 사용
+
+시뮬레이터와 GSL 시각화 도구를 한 번에 실행:
+
+```bash
+make gsl
+```
+
+또는
+
+```bash
+make run
+```
+
 ## Project Structure / 프로젝트 구조
 
-- `sensor_visualizer.c` - Main visualization application / 메인 시각화 애플리케이션
+- `sensor_visualizer.c` - Basic visualization application / 기본 시각화 애플리케이션
+- `sensor_gsl_visualizer.c` - Advanced visualization with GSL analysis / GSL 분석이 포함된 고급 시각화 애플리케이션
 - `sensor_simulator.c` - Sensor data simulator / 센서 데이터 시뮬레이터
 - `Makefile` - Build configuration / 빌드 설정
 - `sensor_data.db` - SQLite database (created automatically) / SQLite 데이터베이스 (자동 생성)
