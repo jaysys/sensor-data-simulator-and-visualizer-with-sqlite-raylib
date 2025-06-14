@@ -1,0 +1,70 @@
+# Compiled files
+sensor_visualizer
+sensor_simulator
+*.o
+*.out
+
+# Database files
+*.db
+*.db-shm
+*.db-wal
+*.db-journal
+
+# macOS system files
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Editor directories and files
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Build directory
+build/
+
+# Log files
+*.log
+
+# Local development environment files
+.env
+.env.local
+
+# Dependency directories
+deps/
+lib/
+
+# Executables
+/bin/
+
+# Prerequisites
+*.d
+
+# Object files
+*.o
+*.ko
+*.obj
+*.elf
+
+# Libraries
+*.lib
+*.a
+*.la
+*.lo
+
+# Executables
+*.exe
+*.out
+*.app
+*.i*86
+*.x86_64
+*.hex
+
+# Debug files
+*.dSYM/
+
+# Temporary files
+*.swp
+*~
